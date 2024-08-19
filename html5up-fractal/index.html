@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>==</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/html5up-fractal/assets/css/conv.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Converting</a></h1>
+					<p>Converta seus arquivos facilmente<br /></p>
+					
+						
+					
+					
+					<h1>Conversor de Arquivos</h1>
+					<div id="dropArea" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event)">
+						Solte o arquivo aqui ou clique para selecionar
+					</div>
+					<input type="file" id="fileInput" accept=".txt,.pdf,.doc,.docx,.html,.xml,.csv,.json,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff,.svg,.eps,.3dp,.3ds,.3mf,.mqo,.obj,.ply,.sdf,.stl,.3d,.ac,.ase,.b3d,.blend" onchange="handleFileSelection(event)" class="hidden">
+					<button onclick="document.getElementById('fileInput').click()">Escolher Arquivo</button>
+					<select id="conversionCategory" onchange="toggleFormats()">
+						<option value="document">Documentos</option>
+						<option value="image">Imagens</option>
+						<option value="image3d">Imagens 3D</option>
+					</select>
+					<select id="documentFormats">
+						<!-- Opções para documentos -->
+						<option value="txt">Texto (TXT)</option>
+						<option value="pdf">PDF</option>
+						<option value="doc">Microsoft Word (DOC)</option>
+						<option value="docx">Microsoft Word (DOCX)</option>
+						<option value="html">HTML</option>
+						<option value="xml">XML</option>
+						<option value="csv">CSV</option>
+						<option value="json">JSON</option>
+						<option value="xls">Excel (XLS)</option>
+						<option value="xlsx">Excel (XLSX)</option>
+						<option value="ppt">PowerPoint (PPT)</option>
+						<option value="pptx">PowerPoint (PPTX)</option>
+					</select>
+					<select id="imageFormats" class="hidden">
+						<!-- Opções para imagens -->
+						<option value="jpg">JPEG (JPG)</option>
+						<option value="jpeg">JPEG</option>
+						<option value="png">PNG</option>
+						<option value="gif">GIF</option>
+						<option value="bmp">BMP</option>
+						<option value="webp">WebP</option>
+						<option value="tiff">TIFF</option>
+						<option value="svg">SVG</option>
+						<option value="eps">EPS</option>
+					</select>
+					<select id="image3dFormats" class="hidden">
+						<!-- Opções para imagens 3D -->
+						<option value="3dp">3DP</option>
+						<option value="3ds">3DS</option>
+						<option value="3mf">3MF</option>
+						<option value="mqo">MQO</option>
+						<option value="obj">OBJ</option>
+						<option value="ply">PLY</option>
+						<option value="sdf">SDF</option>
+						<option value="stl">STL</option>
+						<option value="3d">3D</option>
+						<option value="ac">AC</option>
+						<option value="ase">ASE</option>
+						<option value="b3d">B3D</option>
+						<option value="blend">BLEND</option>
+					</select>
+					<button onclick="convertFile()">Converter</button>
+					<div id="result"></div>
+					<div id="loadingIndicator">Convertendo...</div>
+				<!-- <p id="documentMessage">Documento carregado</p> -->
+				<div id="thumbnailContainer">
+					<img id="thumbnail" alt="Thumbnail" />
+				</div>
+
+						
+					<ul class="actions">
+						<li id="downloadButton" onclick="downloadConvertedFile()"><a href="#" class="button primary icon solid fa-download">Download</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+				
+				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /><p id="documentMessage">Documento carregado</p></div></div>
+			</header>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>Converta seus arquivos Gratuitamente<br />
+					com plena segurança e agilidade</h2>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
+					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
+					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
+					<p></p>
+				</ul>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="images/pic01.png" alt="" /></div>
+						<div class="content">
+							<h3>conversão de arquivos</h3>
+							<p>Ao converter documentos, você pode transformar seus arquivos de texto, planilhas, apresentações e outros tipos de documentos em diferentes formatos. Isso é útil quando você precisa compartilhar informações com pessoas que podem usar programas diferentes ou quando deseja preservar o layout e a formatação do documento em diferentes contextos.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="images/pic02.jpg" alt="" /></div>
+						<div class="content">
+							<h3>Conversão de Imagens</h3>
+							<p>A conversão de imagens permite alterar o formato de suas fotos, ilustrações e gráficos para atender às necessidades específicas do seu projeto ou plataforma. Você pode converter entre formatos populares como JPEG, PNG, GIF e outros, garantindo compatibilidade, qualidade e tamanho de arquivo ideais para o seu uso.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="images/pic03.jpg" alt="" /></div>
+						<div class="content">
+							<h3>Conversão de Imagens 3D</h3>
+							<p>Ao converter imagens 3D, você pode adaptar modelos tridimensionais em diferentes formatos para serem usados em softwares de design, jogos, impressão 3D e muito mais. Essa conversão preserva a geometria, texturas e outras propriedades do modelo, permitindo uma integração suave em diversos ambientes e aplicações.</p>
+						</div>
+					</section>
+					<section class="special">
+						<ul class="icons labeled">
+							<li><span class="icon solid fa-camera-retro"><span class="label">Converta imagens</span></span></li>
+							<li><span class="icon solid fa-sync"><span class="label">Reutilize elementos</span></span></li>
+							<li><span class="icon solid fa-cloud"><span class="label">Salve seus arquivos na nuvem</span></span></li>
+							<!-- <li><span class="icon solid fa-code"><span class="label">Não </span></span></li> -->
+							<li><span class="icon solid fa-desktop"><span class="label">...</span></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<header class="major">
+					<h2>De converting...</h2>
+					<p>Após realizar a conversão de seus arquivos com sucesso, você está pronto para explorar todo o potencial das suas criações. Seja compartilhando documentos facilmente acessíveis, exibindo imagens em alta qualidade ou dando vida a modelos tridimensionais, nosso conversor proporciona a versatilidade que você precisa para expressar sua criatividade e atender às suas necessidades profissionais. Continue aproveitando as infinitas possibilidades que a tecnologia oferece e conte conosco para simplificar suas tarefas diárias. Transforme, crie e inove com confiança, porque aqui no nosso conversor, o seu próximo grande projeto está apenas a um clique de distância.</p>
+				</header>
+				<!-- <ul class="actions special">
+					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul> -->
+			</section>
+
+		
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+			</footer>
+
+			<!-- Scripts -->
+			<script src="/html5up-fractal/assets/js/conv.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

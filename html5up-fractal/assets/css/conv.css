@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#fileInput {
+    margin-bottom: 10px;
+}
+#dropArea {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+#result {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+}
+#loadingIndicator {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+#thumbnailContainer {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+#thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+}
+#documentMessage {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+/* Estilo para esconder as opções que não são relevantes */
+.hidden {
+    display: none;
+}
+.content select{
+    margin-bottom: 10px;
+}
+.content button{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#documentMessage{
+    position: absolute;
+    margin-top: -200px;
+}
